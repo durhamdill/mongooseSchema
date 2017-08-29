@@ -26,11 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'mustache')
 // app.set('layout', 'layout');
 
-app.get('/:id/', function (req, res) {
-  Pet.findOne({_id: req.params.id}).then(function (pet) {
-    res.render("pet_profile", {pet: pet});
-  })
-})
+
 
 app.get('/add/', function (req, res) {
   res.render('add_pet');
@@ -41,16 +37,12 @@ app.post('/add/', function (req, res) {
   .then(function (pet) {
     res.redirect('/');
   })
-  // .catch(function (error) {
-  //   let errorMsg;
-  //   if (error.code === DUPLICATE_RECORD_ERROR) {
-  //     // make message about duplicate
-  //     errorMsg = `The recipe name "${req.body.name}" has already been used.`
-  //   } else {
-  //     errorMsg = "You have encountered an unknown error."
-  //   }
-  //   res.render('new_recipe', {errorMsg: errorMsg});
-  // })
+});
+
+app.get('/:id/', function (req, res) {
+  Pet.findOne({_id: req.params.id}).then(function (pet) {
+    res.render("pet_profile", {pet: pet});
+  })
 });
 
 
