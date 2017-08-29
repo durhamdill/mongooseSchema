@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add a pet</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+
+    <h2>Add a pet</h2>
+
+    <!-- {{#errorMsg}}
+    <div class="alert alert-danger">
+      {{.}}
+    </div>
+    {{/errorMsg}} -->
+
+    <form action="/add/" method="POST">
+      <fieldset>
+      <legend>GENERAL INFO</legend>
+
+      <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </p>
+
+      <p>
+        <label for="species">Species:</label>
+        <input type="text" id="species" name="species" />
+      </p>
+
+      <p>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" />
+      </p>
+
+      <p>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" />
+      </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>DIET</legend>
+
+        <p>
+          <label for="foodType">Food Type:</label>
+          <input type="text" id="foodType" name="foodType" />
+        </p>
+
+        <p>
+          <label for="frequency">Frequency:</label>
+          <input type="number" id="frequency" name="frequency" />
+        </p>
+
+        <p>
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" />
+        </p>
+
+      </fieldset>
+
+      <p>
+        <button type="submit">Add pet</button>
+      </p>
+    </form>
+
+
+  </body>
+</html>

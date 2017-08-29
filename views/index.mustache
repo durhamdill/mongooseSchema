@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pet Profile</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+
+    <h1>Pet Collector:</h1>
+
+    {{#pet}}
+      <div class="pet">
+        <h2>Name: {{name}}</h2>
+        <h3>Species: {{species}}</h3>
+        <h3>Gender: {{gender}}</h3>
+        <h3>Age: {{age}}</h3>
+        <a href="/{{_id}}">See full profile for {{name}}</a>
+      </div>
+      <hr>
+    {{/pet}}
+
+  </body>
+</html>
