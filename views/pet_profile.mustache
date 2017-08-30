@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Pet Index</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta21/shoelace.css">
   </head>
   <body>
 
@@ -24,7 +25,7 @@
         <h2>Diet:</h2>
         {{^diet}}
           <p>No diet info provided.</p>
-          <button type="button" name="button"><a href="/{{_id}}/add_diet/">Add diet for {{name}}</a></button>
+          <button type="button" name="button" class="button-info"><a href="/{{_id}}/add_diet/">Add diet for {{name}}</a></button>
         {{/diet}}
         {{#diet}}
         <ul>
@@ -36,11 +37,11 @@
       </div>
       <hr>
 
-    <form action="/{{_id}}/delete/" method="POST">
-      <button type="submit" name="button">Delete Profile</button>
-    </form>
+    <button type="button" name="button" class="button-info"><a href="/{{_id}}/update/">Update Profile</a></button>
 
-    <button type="button" name="button"><a href="/{{_id}}/update/">Update Profile</a></button>
+    <form action="/{{_id}}/delete/" method="POST">
+      <button type="submit" name="button" class="button-warning">Delete Profile</button>
+    </form>
 
     {{/pet}}
 

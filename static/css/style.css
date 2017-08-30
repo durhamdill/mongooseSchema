@@ -1,8 +1,12 @@
 body {
   font-family: sans-serif;
+  padding: 20px;
 }
 
-h1 {
-  font-family: sans-serif;
-  color: red;
+.button-info {
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: bolder;
 }
