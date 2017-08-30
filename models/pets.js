@@ -8,8 +8,8 @@ const petSchema = new mongoose.Schema({
   nicknames: [String],
   diet: [{
     foodType: String,
-    frequency: Number,
-    quantity: Number,
+    frequency: String,
+    quantity: String,
   }]
 });
 

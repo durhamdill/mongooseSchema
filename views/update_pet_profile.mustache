@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Update Pet Profile</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+
+    {{#pet}}
+
+    <h2>Update Pet Profile for {{name}}</h2>
+
+    <form action="/{{_id}}/update/" method="POST">
+      <fieldset>
+      <legend>GENERAL INFO</legend>
+
+      <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required value="{{name}}" />
+      </p>
+
+      <p>
+        <label for="species">Species:</label>
+        <input type="text" id="species" name= "species" value="{{species}}" />
+      </p>
+
+      <!-- <p>
+        <label for="gender">Gender:</label>
+        <input type="radio" id="gender" name="gender" value="Female" checked="{{gender}}"/>Female
+        <input type="radio" id="gender" name="gender" value="Male" checked="{{gender}}"/>Male
+      </p> -->
+
+      <p>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="{{age}}"/>
+      </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Update pet profile</button>
+      </p>
+    </form>
+
+    {{/pet}}
+
+  </body>
+</html>

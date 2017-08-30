@@ -3,34 +3,45 @@
   <head>
     <meta charset="utf-8">
     <title>Pet Index</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
 
+    {{#pet}}
     <h1>Pet Profile: {{name}}</h1>
 
-    {{#pet}}
       <div class="general-info">
         <h2>General Info:</h2>
+        <h3>Name: {{name}}</h3>
         <h3>Species: {{species}}</h3>
         <h3>Gender: {{gender}}</h3>
         <h3>Age: {{age}}</h3>
         <h3>Nicknames: {{nicknames}}</h3>
       </div>
+      <hr>
 
       <div class="diet">
         <h2>Diet:</h2>
         {{^diet}}
           <p>No diet info provided.</p>
+          <button type="button" name="button"><a href="/{{_id}}/add_diet/">Add diet for {{name}}</a></button>
         {{/diet}}
         {{#diet}}
-          <ul>
-            <li>Food Type: {{foodType}}</li>
-            <li>Frequency: {{frequency}}</li>
-            <li>Quantity: {{quantity}}</li>
-          </ul>
+        <ul>
+          <li>Food Type: {{foodType}}</li>
+          <li>Frequency: {{frequency}}</li>
+          <li>Quantity: {{quantity}}</li>
+        </ul>
         {{/diet}}
       </div>
+      <hr>
+
+    <form action="/{{_id}}/delete/" method="POST">
+      <button type="submit" name="button">Delete Profile</button>
+    </form>
+
+    <button type="button" name="button"><a href="/{{_id}}/update/">Update Profile</a></button>
+
     {{/pet}}
 
   </body>

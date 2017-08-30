@@ -3,17 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Add a pet</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
 
     <h2>Add a pet</h2>
-
-    <!-- {{#errorMsg}}
-    <div class="alert alert-danger">
-      {{.}}
-    </div>
-    {{/errorMsg}} -->
 
     <form action="/add/" method="POST">
       <fieldset>
@@ -31,33 +25,15 @@
 
       <p>
         <label for="gender">Gender:</label>
-        <input type="text" id="gender" name="gender" />
+        <input type="radio" id="gender" name="gender" value="Female" />Female
+        <input type="radio" id="gender" name="gender" value="Male" />Male
+        <!-- <input type="radio" id="gender" name="gender" value="Other" />Female -->
       </p>
 
       <p>
         <label for="age">Age:</label>
         <input type="number" id="age" name="age" />
       </p>
-      </fieldset>
-
-      <fieldset>
-        <legend>DIET</legend>
-
-        <p>
-          <label for="foodType">Food Type:</label>
-          <input type="text" id="foodType" name="foodType" />
-        </p>
-
-        <p>
-          <label for="frequency">Frequency:</label>
-          <input type="number" id="frequency" name="frequency" />
-        </p>
-
-        <p>
-          <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" />
-        </p>
-
       </fieldset>
 
       <p>
